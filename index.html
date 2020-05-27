@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opção de likes na foto</title>
+</head>
+
+<body>
+    <div id='container-media'>
+        <div id='container-photo'> </div>
+        <div id='heart' onclick='animar()'><img src="assets/coracao-vazio.png" id='imagem' draggable="false"></div>
+
+    </div>
+    <script>
+        const divImagem = document.getElementById('heart')
+        divImagem.onclick = function() {
+            var img = document.getElementById('imagem')
+            console.log(img)
+            if (String(img.src).replace('coracao-vazio.png', '') != String(img.src)) {
+                img.src = 'assets/coracao-cheio.png'
+                img.style.animation = 'coracao 0.7s'
+                img.style.width = '100%'
+                img.style.height = '100%'
+            } else {
+                img.src = 'assets/coracao-vazio.png'
+                img.style.animation = 'none'
+                img.style.width = '80%'
+                img.style.height = '80%'
+            }
+        }
+    </script>
+</body>
+
+</html>
